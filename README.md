@@ -1,12 +1,12 @@
 # Blood Pressure Visualiser
 
-This Shiny application provides an interactive way to visualize blood pressure data. Users can upload their own CSV files or use sample data to explore blood pressure measurements over time. The application also includes an option to customize the theme of the plot for a personalized experience.
+This Shiny application provides an interactive way to visualise blood pressure data. Users can upload their own CSV files or use sample data to explore blood pressure measurements over time. The application also includes an option to customize the theme of the plot for a personalised experience.
 
 ## Features
 
 - **Data Input**: Users can upload a CSV file with blood pressure data. If no file is uploaded, sample data will be generated automatically.
 - **Date Range Filter**: The app allows users to filter the displayed data based on a specific date range.
-- **Customizable Plot Themes**: Users can choose from four different themes (`Classic`, `Minimal`, `Light`, `Dark`) to change the appearance of the plot.
+- **Customisable Plot Themes**: Users can choose from four different themes (`Classic`, `Minimal`, `Light`, `Dark`) to change the appearance of the plot.
 - **Basic Statistics**: A summary of basic statistics, including mean, median, and standard deviation for systolic and diastolic pressure values, is provided.
 - **Blood Pressure Categories**: The plot features color-coded background zones indicating different blood pressure categories (e.g., optimal, normal, hypertension grades).
 
@@ -52,12 +52,12 @@ If the CSV file is improperly formatted or cannot be read, the application will 
 1. Launch the app using RStudio or R, or use [Shinylive](https://shinylive.io/) to run it in your browser.
 2. Choose a CSV file to upload (optional) or use the sample data.
 3. Filter the data by selecting a date range.
-4. Customize the plot theme using the dropdown menu.
+4. Customise the plot theme using the dropdown menu.
 5. View the blood pressure plot and summary statistics in the main panel.
 
-## Plot Customization
+## Plot Customisation
 
-The app includes four customizable themes for the plot:
+The app includes four customisable themes for the plot:
 - **Classic**: A traditional, clean theme.
 - **Minimal**: A theme with minimal visual clutter.
 - **Light**: A light-colored theme for better readability.
