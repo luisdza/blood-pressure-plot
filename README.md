@@ -1,87 +1,72 @@
+# Blood Pressure Visualiser
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+This Shiny application provides an interactive way to visualize blood pressure data. Users can upload their own CSV files or use sample data to explore blood pressure measurements over time. The application also includes an option to customize the theme of the plot for a personalized experience.
 
-# plotbloodpressure
+## Features
 
-<!-- badges: start -->
+- **Data Input**: Users can upload a CSV file with blood pressure data. If no file is uploaded, sample data will be generated automatically.
+- **Date Range Filter**: The app allows users to filter the displayed data based on a specific date range.
+- **Customizable Plot Themes**: Users can choose from four different themes (`Classic`, `Minimal`, `Light`, `Dark`) to change the appearance of the plot.
+- **Basic Statistics**: A summary of basic statistics, including mean, median, and standard deviation for systolic and diastolic pressure values, is provided.
+- **Blood Pressure Categories**: The plot features color-coded background zones indicating different blood pressure categories (e.g., optimal, normal, hypertension grades).
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Deploy to
-shinyapps.io](https://github.com/luisdza/plot-blood-pressure/workflows/Deploy%20to%20shinyapps.io/badge.svg)](https://github.com/luisdza/plot-blood-pressure/actions)
-![Deploy documentation to
-gh-pages](https://github.com/luisdza/plot-blood-pressure/workflows/Deploy%20documentation%20to%20gh-pages/badge.svg)
-<!-- badges: end -->
+## Running the App on Shinylive
 
-The goal of plotbloodpressure is to …
+You can run the app directly in your browser using [Shinylive](https://shinylive.io/). Shinylive allows you to run Shiny applications without needing to install R or any additional software.
 
-## Start HERE
+To get started:
 
-To check out the dashboard, go here:
-<https://luisd.shinyapps.io/plot-blood-pressure/>
+1. Visit [Shinylive](https://shinylive.io/).
+2. Upload your Shiny app files, including this script, to the platform.
+3. Shinylive will provide a link for you to run the app directly in your browser.
 
-## Installation
+## Installation (Local Option)
 
-You can install the released version of plotbloodpressure from
-[CRAN](https://CRAN.R-project.org) with:
+To run this Shiny application locally, make sure you have R and the following R packages installed:
 
-``` r
-install.packages("plotbloodpressure")
+```r
+install.packages(c("shiny", "ggplot2", "dplyr", "shinythemes", "bslib"))
 ```
 
-And the development version from [GitHub](https://github.com/) with:
+## Running the App Locally
 
-``` r
-# install.packages("devtools")
-devtools::install_github("luisdza/plot-blood-pressure")
+You can run the app locally using the following command in your R console:
+
+```r
+shiny::runApp("path/to/your/app")
 ```
+Replace `path/to/your/app` with the path where you saved the R script.
 
-## Example
+## CSV File Format
 
-This is a basic example which shows you how to solve a common problem:
+The CSV file should include the following columns:
+- **Date**: The date of the measurement (in `yyyy-mm-dd` format).
+- **Systolic**: The systolic blood pressure value.
+- **Diastolic**: The diastolic blood pressure value.
+- **TimeOfDay**: Indicates whether the reading was taken in the `Morning` or `Evening`.
 
-``` r
-library(plotbloodpressure)
-## basic example code
-```
+If the CSV file is improperly formatted or cannot be read, the application will revert to using the sample data and display a notification.
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+## Usage
 
-``` r
-summary(bloodpressuremeasurements)
-#>       Date                Time            Category              Sys       
-#>  Min.   :2020-08-12   Length:42         Length:42          Min.   : 96.0  
-#>  1st Qu.:2020-08-18   Class1:hms        Class :character   1st Qu.:126.2  
-#>  Median :2020-08-27   Class2:difftime   Mode  :character   Median :133.5  
-#>  Mean   :2020-08-26   Mode  :numeric                       Mean   :133.1  
-#>  3rd Qu.:2020-09-02                                        3rd Qu.:139.8  
-#>  Max.   :2020-09-09                                        Max.   :151.0  
-#>       Dia             Pulse      
-#>  Min.   : 74.00   Min.   :61.00  
-#>  1st Qu.: 86.00   1st Qu.:69.00  
-#>  Median : 90.50   Median :74.00  
-#>  Mean   : 90.76   Mean   :73.79  
-#>  3rd Qu.: 96.00   3rd Qu.:77.75  
-#>  Max.   :104.00   Max.   :96.00
-```
+1. Launch the app using RStudio or R, or use [Shinylive](https://shinylive.io/) to run it in your browser.
+2. Choose a CSV file to upload (optional) or use the sample data.
+3. Filter the data by selecting a date range.
+4. Customize the plot theme using the dropdown menu.
+5. View the blood pressure plot and summary statistics in the main panel.
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
+## Plot Customization
 
-You can also embed plots, for example:
+The app includes four customizable themes for the plot:
+- **Classic**: A traditional, clean theme.
+- **Minimal**: A theme with minimal visual clutter.
+- **Light**: A light-colored theme for better readability.
+- **Dark**: A dark-colored theme, ideal for viewing in low-light environments.
 
-<div class="figure">
+## Error Handling
 
-<img src="man/figures/README-plot-1.png" alt="Some Plot" width="100%" />
+If there are issues reading the CSV file (e.g., incorrect format or missing data), a notification will appear, and sample data will be used instead.
 
-<p class="caption">
+## License
 
-Some Plot
-
-</p>
-
-</div>
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).

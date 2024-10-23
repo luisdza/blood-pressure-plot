@@ -1,0 +1,23 @@
+# Workflow derived from httpsgithub.composit-devr-shinylivetreeactions-v1examples
+# Need help debugging build failures Start at httpsgithub.comr-libactions#where-to-find-help
+#
+# Basic example of a GitHub Actions workflow that builds a Shiny app and deploys
+# it to GitHub Pages.
+name Deploy app to gh-pages
+
+on
+  # Manually trigger the workflow
+  workflow_dispatch
+  # Trigger on push to `main` branch
+  push
+    branches [main]
+  # Trigger on pull request to all branches (but do not deploy to gh-pages)
+  pull_request
+
+jobs
+  shinylive
+    uses posit-devr-shinylive.githubworkflowsdeploy-app.yaml@actions-v1
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions
+      pages write # to deploy to Pages
+      id-token write # to verify the deployment originates from an appropriate source
